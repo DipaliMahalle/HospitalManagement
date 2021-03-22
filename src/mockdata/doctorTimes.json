@@ -1,0 +1,75 @@
+[{
+        "id": "H01D101",
+        "name": "Swapnil Dudhat",
+        "monday": "8am - 9pm",
+        "tuesday": "8am - 9pm",
+        "wensday": "8am - 9pm",
+        "thursday": "8am - 9pm",
+        "friday": "8am - 9pm",
+        "saturday": "8am - 9pm",
+        "sunday": "8am - 9pm"
+
+    },
+
+    {
+        "id": "H01D102",
+        "name": "Laxmi Dhaskat",
+
+        "monday": "7am - 6pm",
+        "tuesday": "7am - 6pm",
+        "wensday": "7am - 6pm",
+        "thursday": "7am - 6pm",
+        "friday": "7am - 6pm",
+        "saturday": "7am - 6pm",
+        "sunday": "7am - 6pm"
+    },
+    {
+        "id": "H02D401",
+        "name": "kolte patil",
+
+        "monday": "8am - 10pm",
+        "tuesday": "8am - 10pm",
+        "wensday": "8am - 10pm",
+        "thursday": "8am - 10pm",
+        "friday": "8am - 10pm",
+        "saturday": "8am - 10pm",
+        "sunday": "8am - 10pm"
+    },
+    {
+        "id": "H02D403",
+        "name": "Tejaswini deshmukh",
+
+        "monday": "8am - 10pm",
+        "tuesday": "8am - 10pm",
+        "wensday": "8am - 10pm",
+        "thursday": "8am - 10pm",
+        "friday": "8am - 10pm",
+        "saturday": "8am - 10pm",
+        "sunday": "8am - 10pm"
+    },
+    {
+        "id": "H02D405",
+        "name": "Prashant Mahalle",
+        "monday": "8am - 10pm",
+        "tuesday": "8am - 10pm",
+        "wensday": "8am - 10pm",
+        "thursday": "8am - 10pm",
+        "friday": "8am - 10pm",
+        "saturday": "8am - 10pm",
+        "sunday": "8am - 10pm"
+    },
+    {
+        "id": "H03D701",
+        "name": "Swapna Joshi",
+
+        "monday": "8am - 10pm",
+        "tuesday": "8am - 10pm",
+        "wensday": "8am - 10pm",
+        "thursday": "8am - 10pm",
+        "friday": "8am - 10pm",
+        "saturday": "8am - 10pm",
+        "sunday": "8am - 10pm"
+    }
+
+
+]

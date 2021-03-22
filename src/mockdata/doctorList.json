@@ -1,0 +1,65 @@
+ [{
+         "id": "H01D101",
+         "name": "Swapnil Dudhat",
+         "type": "physician",
+         "contactNo": "9883646616",
+         "email": "sde@gmail.com",
+         "city": "pune",
+         "qualification": "MBBS MS",
+         "image": "/DoctorsImage/d8.jpg",
+         "timing": "8 am-9 pm"
+     },
+     {
+         "id": "H01D102",
+         "name": "Laxmi Dhaskat",
+         "type": "civil surgon",
+         "contactNo": "8654332277",
+         "email": "ojas@gmail.com",
+         "city": "pune",
+         "qualification": "MBBS MD",
+         "image": "/DoctorsImage/d6.jpg"
+     },
+     {
+         "id": "H02D401",
+         "name": "kolte patil",
+         "type": "children specialist",
+         "contactNo": "9789809900",
+         "email": "kolte@gmail.com",
+         "city": "pune",
+         "qualification": "MBBS MD",
+         "image": "/DoctorsImage/d5.jpg"
+     },
+     {
+         "id": "H02D403",
+         "name": "Tejaswini deshmukh",
+         "type": "physician",
+         "contactNo": "9883646616",
+         "email": "deshmukh@gmail.com",
+         "city": "pune",
+         "qualification": "MBBS MS",
+         "image": "/DoctorsImage/d4.jpg",
+         "timing": "8 am-9 pm"
+     },
+     {
+         "id": "H02D405",
+         "name": "Prashant Mahalle",
+         "type": "civil surgon",
+         "contactNo": "8654332277",
+         "email": "prash@gmail.com",
+         "city": "pune",
+         "qualification": "MBBS MD",
+         "image": "/DoctorsImage/prashant.jpg"
+     },
+     {
+         "id": "H03D701",
+         "name": "Swapna Joshi",
+         "type": "children specialist",
+         "contactNo": "9789809900",
+         "email": "swpna@gmail.com",
+         "city": "pune",
+         "qualification": "MBBS MD",
+         "image": "/DoctorsImage/d2.jpg"
+     }
+
+
+ ]

@@ -1,0 +1,34 @@
+[{
+        "id": "H01",
+        "name": "Get Life",
+        "type": "private",
+        "contactNo": "7883646616 ",
+        "email": "getlifePune@gmail.com",
+        "roomType": "Double room",
+        "city": "pune",
+        "image": "/HospitalsImage/getlife.jpg"
+
+    },
+    {
+        "id": "H02",
+        "name": "Ojas",
+        "type": "private",
+        "contactNo": "9543322772",
+        "email": "ojaspune@gmail.com",
+        "roomType": "Double room",
+        "city": "pune",
+        "image": "/HospitalsImage/ojas.jpg"
+
+    },
+    {
+        "id": "H03",
+        "name": "Kolte Patil",
+        "type": "private",
+        "contactNo": "7789809906",
+        "email": "kolte@gmail.com",
+        "roomType": "Double room,Single room",
+        "city": "pune",
+        "image": "/HospitalsImage/kolte.jpg"
+
+    }
+]

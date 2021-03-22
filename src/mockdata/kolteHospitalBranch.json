@@ -1,0 +1,17 @@
+[{
+        "branchName": "Kolte Patil Hospital",
+        "branchEmail": "koltesatara@gmail.com",
+        "branchContactNo": "8789000999",
+        "branchFacility": "Sonography,Dental Facility",
+        "branchCity": "Satara",
+        "branchState": "Maharashtra"
+    },
+    {
+        "branchName": "Kolte Patil Hospital",
+        "branchEmail": "kolteakola@gmail.com",
+        "branchContactNo": "8789000999",
+        "branchFacility": "OPD,Sonography,",
+        "branchCity": "Akola",
+        "branchState": "Maharashtra"
+    }
+]
