@@ -1,0 +1,349 @@
+{
+  "hospitalList": [
+    {
+      "id": 1,
+      "name": "Sahyadri Hospital",
+      "type": "private",
+      "contactNo": "9789809908",
+      "email": "sahyadrihospital@gmail.com",
+      "roomType": "Double room,Single room",
+      "city": "pune",
+      "image": "/HospitalsImage/sahyadry.jpg",
+      "doctorsName": "Swapnil Dudhat,Atul Kolte"
+    },
+    {
+      "id": 2,
+      "name": "Deenanath Mangeshkar Hospital ",
+      "type": "private",
+      "contactNo": "7543322668",
+      "email": "deennathpune@gmail.com",
+      "roomType": "Double room",
+      "city": "pune",
+      "image": "/HospitalsImage/Dinanath.jpg",
+      "doctorsName": "Laxmi Dhaskat,Tejaswini Deshmukh"
+    },
+    {
+      "id": 3,
+      "name": "Kolte Patil Hospital",
+      "type": "private",
+      "contactNo": "7789809906",
+      "email": "kolte@gmail.com",
+      "roomType": "Double room,Single room",
+      "city": "pune",
+      "image": "/HospitalsImage/kolte.jpg",
+      "doctorsName": "Atul Kolte,Prashant Mahalle"
+    },
+    {
+      "id": 4,
+      "name": "Aditya Birla Memorial Hospital",
+      "type": "private",
+      "contactNo": "8983646616 ",
+      "email": "adityabirlaapune@gmail.com",
+      "roomType": "Double room",
+      "city": "pune",
+      "image": "/HospitalsImage/adityabirla.jpg",
+      "doctorsName": "Swapna Joshi,Swapnil Dudhat"
+    },
+    {
+      "id": 5,
+      "name": "Get Life Hospital",
+      "type": "private",
+      "contactNo": "7883646616 ",
+      "email": "getlifepune@gmail.com",
+      "roomType": "Double room",
+      "city": "pune",
+      "image": "/HospitalsImage/getlife.jpg",
+      "doctorsName": "Tejaswini Deshmukh,Atul Kolte"
+    },
+    {
+      "id": 6,
+      "name": "Ojas Hospital",
+      "type": "private",
+      "contactNo": "9543322772",
+      "email": "ojaspune@gmail.com",
+      "roomType": "Double room",
+      "city": "pune",
+      "image": "/HospitalsImage/ojas.jpg",
+      "doctorsName": "Prashant Mahalle,Swapna Joshi"
+    },
+    {
+      "id": 7,
+      "name": "QuickSolution",
+      "type": "Government Hospital",
+      "contactNo": "679890903900",
+      "emailId": "dip@gmail.com",
+      "roomType": [
+        "Twin Sharing Room",
+        "General Ward"
+      ],
+      "city": "pune",
+      "image": "certificate.jpg",
+      "doctorName": [
+        "Swapnil Dudhat",
+        "Laxmi Dhaskat"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "QuickSolution",
+      "type": "Government Hospital",
+      "contactNo": "324567866776",
+      "emailId": "dip@gmail",
+      "roomType": [
+        "General Ward",
+        "Twin Sharing Room",
+        "Deluxe Room"
+      ],
+      "city": "pune",
+      "image": "IMG_20190815_085851.jpg",
+      "doctorName": [
+        "Swapnil Dudhat",
+        "Laxmi Dhaskat"
+      ]
+    }
+  ],
+  "doctorList": [
+    {
+      "id": 101,
+      "name": "Swapnil Dudhat",
+      "type": "physician",
+      "contactNo": "9883646616",
+      "email": "swapnil@gmail.com",
+      "city": "pune",
+      "qualification": "MBBS MS",
+      "image": "/DoctorsImage/d8.jpg"
+    },
+    {
+      "id": 102,
+      "name": "Laxmi Dhaskat",
+      "type": "civil surgon",
+      "contactNo": "8654332277",
+      "email": "laxmi@gmail.com",
+      "city": "pune",
+      "qualification": "MBBS MD",
+      "image": "/DoctorsImage/d6.jpg"
+    },
+    {
+      "id": 103,
+      "name": "Atul Kolte",
+      "type": "children specialist",
+      "contactNo": "9789809900",
+      "email": "kolte@gmail.com",
+      "city": "pune",
+      "qualification": "MBBS MD",
+      "image": "/DoctorsImage/d5.jpg"
+    },
+    {
+      "id": 104,
+      "name": "Tejaswini Deshmukh",
+      "type": "physician",
+      "contactNo": "9883646616",
+      "email": "deshmukh@gmail.com",
+      "city": "pune",
+      "qualification": "MBBS MS",
+      "image": "/DoctorsImage/d4.jpg"
+    },
+    {
+      "id": 105,
+      "name": "Prashant Mahalle",
+      "type": "civil surgon",
+      "contactNo": "8654332277",
+      "email": "prash@gmail.com",
+      "city": "pune",
+      "qualification": "MBBS MD",
+      "image": "/DoctorsImage/prashant.jpg"
+    },
+    {
+      "id": 106,
+      "name": "Swapna Joshi",
+      "type": "children specialist",
+      "contactNo": "9789809900",
+      "email": "swpna@gmail.com",
+      "city": "pune",
+      "qualification": "MBBS MD",
+      "image": "/DoctorsImage/d2.jpg"
+    }
+  ],
+  "doctorTimes": [
+    {
+      "id": 101,
+      "name": "Swapnil Dudhat",
+      "monday": "8am - 9pm",
+      "tuesday": "8am - 9pm",
+      "wensday": "8am - 9pm",
+      "thursday": "8am - 9pm",
+      "friday": "8am - 9pm",
+      "saturday": "8am - 9pm",
+      "sunday": "8am - 9pm",
+      "fees": "500 Rs"
+    },
+    {
+      "id": 102,
+      "name": "Laxmi Dhaskat",
+      "monday": "7am - 6pm",
+      "tuesday": "7am - 6pm",
+      "wensday": "7am - 6pm",
+      "thursday": "7am - 6pm",
+      "friday": "7am - 6pm",
+      "saturday": "7am - 6pm",
+      "sunday": "7am - 6pm",
+      "fees": "400 Rs"
+    },
+    {
+      "id": 103,
+      "name": "Atul Kolte",
+      "monday": "8am - 10pm",
+      "tuesday": "8am - 10pm",
+      "wensday": "8am - 10pm",
+      "thursday": "8am - 10pm",
+      "friday": "8am - 10pm",
+      "saturday": "8am - 10pm",
+      "sunday": "8am - 10pm",
+      "fees": "500 Rs"
+    },
+    {
+      "id": 104,
+      "name": "Tejaswini Deshmukh",
+      "monday": "8am - 10pm",
+      "tuesday": "8am - 10pm",
+      "wensday": "8am - 10pm",
+      "thursday": "8am - 10pm",
+      "friday": "8am - 10pm",
+      "saturday": "8am - 10pm",
+      "sunday": "8am - 10pm",
+      "fees": "450 Rs"
+    },
+    {
+      "id": 105,
+      "name": "Prashant Mahalle",
+      "monday": "8am - 10pm",
+      "tuesday": "8am - 10pm",
+      "wensday": "8am - 10pm",
+      "thursday": "8am - 10pm",
+      "friday": "8am - 10pm",
+      "saturday": "8am - 10pm",
+      "sunday": "8am - 10pm",
+      "fees": "550 Rs"
+    },
+    {
+      "id": 106,
+      "name": "Swapna Joshi",
+      "monday": "8am - 10pm",
+      "tuesday": "8am - 10pm",
+      "wensday": "8am - 10pm",
+      "thursday": "8am - 10pm",
+      "friday": "8am - 10pm",
+      "saturday": "8am - 10pm",
+      "sunday": "8am - 10pm",
+      "fees": "500 Rs"
+    }
+  ],
+  "AdityaBirlaMemorialHospitalBranch": [
+    {
+      "branchName": "Aditya Birla Memorial Hospital",
+      "branchEmail": "adityabirlamumbai@gmail.com",
+      "branchContactNo": "9844566903",
+      "branchFacility": "M.R. ,CityScan",
+      "branchCity": "Mumbai",
+      "branchState": "Maharashtra"
+    },
+    {
+      "branchName": "Aditya Birla Memorial Hospital",
+      "branchEmail": "adityabirlajalgon@gmail.com",
+      "branchContactNo": "9874566903",
+      "branchFacility": "CityScan",
+      "branchCity": "Akola",
+      "branchState": "Maharashtra"
+    }
+  ],
+  "DeenanathMangeshkarHospitalBranch": [
+    {
+      "branchName": "Deenanath Mangeshkar Hospital ",
+      "branchEmail": "deenanath_mangeshkarmumbai@gmail.com",
+      "branchContactNo": "7844566903",
+      "branchFacility": "M.R. ,CityScan",
+      "branchCity": "Mumbai",
+      "branchState": "Maharashtra"
+    },
+    {
+      "branchName": "Deenanath Mangeshkar Hospital ",
+      "branchEmail": "deenanath_mangeshkar_hospital@gmail.com",
+      "branchContactNo": "9844566903",
+      "branchFacility": "CityScan",
+      "branchCity": "Bhusaval",
+      "branchState": "Maharashtra"
+    }
+  ],
+  "GetLifeHospitalBranch": [
+    {
+      "branchName": "Get Life",
+      "branchEmail": "getlife@gmail.com",
+      "branchContactNo": "7883646616",
+      "branchFacility": "OPD,OT",
+      "branchCity": "patna",
+      "branchState": "Bihar"
+    },
+    {
+      "branchName": "Get Life",
+      "branchEmail": "getlife@gmail.com",
+      "branchContactNo": "9083646616",
+      "branchFacility": "M.R.,OPD",
+      "branchCity": "Ahamdabad",
+      "branchState": "Gujarat"
+    }
+  ],
+  "KoltePatilHospitalBranch": [
+    {
+      "branchName": "Kolte Patil Hospital",
+      "branchEmail": "koltesatara@gmail.com",
+      "branchContactNo": "8789000999",
+      "branchFacility": "Sonography,Dental Facility",
+      "branchCity": "Satara",
+      "branchState": "Maharashtra"
+    },
+    {
+      "branchName": "Kolte Patil Hospital",
+      "branchEmail": "kolteakola@gmail.com",
+      "branchContactNo": "8789000999",
+      "branchFacility": "OPD,Sonography,",
+      "branchCity": "Akola",
+      "branchState": "Maharashtra"
+    }
+  ],
+  "OjasHospitalBranch": [
+    {
+      "branchName": "ojas Hospital",
+      "branchEmail": "ojasmumbai@gmail.com",
+      "branchContactNo": "7844566903",
+      "branchFacility": "M.R. ,CityScan",
+      "branchCity": "Mumbai",
+      "branchState": "Maharashtra"
+    },
+    {
+      "branchName": "ojas Hospital",
+      "branchEmail": "ojasamravati@gmail.com",
+      "branchContactNo": "9844566903",
+      "branchFacility": "CityScan",
+      "branchCity": "Amravati",
+      "branchState": "Maharashtra"
+    }
+  ],
+  "SahyadriHospitalBranch": [
+    {
+      "branchName": "Sahyadri Hospital",
+      "branchEmail": "sahyadrimumbai@gmail.com",
+      "branchContactNo": "8844566903",
+      "branchFacility": "M.R. ,CityScan",
+      "branchCity": "Mumbai",
+      "branchState": "Maharashtra"
+    },
+    {
+      "branchName": "Sahyadri Hospital",
+      "branchEmail": "sahyadrijalgon@gmail.com",
+      "branchContactNo": "7844566903",
+      "branchFacility": "CityScan",
+      "branchCity": "jalgon",
+      "branchState": "Maharashtra"
+    }
+  ]
+}
