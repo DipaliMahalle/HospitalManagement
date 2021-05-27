@@ -1,34 +1,67 @@
 [{
         "id": "H01",
-        "name": "Get Life",
+        "name": "Sahyadri Hospital",
         "type": "private",
-        "contactNo": "7883646616 ",
-        "email": "getlifePune@gmail.com",
-        "roomType": "Double room",
+        "contactNo": "9789809908",
+        "email": "sahyadrihospital@gmail.com",
+        "roomType": "Double room,Single room",
         "city": "pune",
-        "image": "/HospitalsImage/getlife.jpg"
+        "image": "/HospitalsImage/sahyadry.jpg"
 
     },
     {
         "id": "H02",
-        "name": "Ojas",
+        "name": "Deenanath Mangeshkar Hospital ",
         "type": "private",
-        "contactNo": "9543322772",
-        "email": "ojaspune@gmail.com",
+        "contactNo": "7543322668",
+        "email": "deennathpune@gmail.com",
         "roomType": "Double room",
         "city": "pune",
-        "image": "/HospitalsImage/ojas.jpg"
+        "image": "/HospitalsImage/Dinanath.jpg"
 
     },
     {
         "id": "H03",
-        "name": "Kolte Patil",
+        "name": "Kolte Patil Hospital",
         "type": "private",
         "contactNo": "7789809906",
         "email": "kolte@gmail.com",
         "roomType": "Double room,Single room",
         "city": "pune",
         "image": "/HospitalsImage/kolte.jpg"
+
+    },
+    {
+        "id": "H04",
+        "name": "Aditya Birla Memorial Hospital",
+        "type": "private",
+        "contactNo": "8983646616 ",
+        "email": "adityabirlaapune@gmail.com",
+        "roomType": "Double room",
+        "city": "pune",
+        "image": "/HospitalsImage/adityabirla.jpg"
+
+    },
+    {
+        "id": "H05",
+        "name": "Get Life Hospital",
+        "type": "private",
+        "contactNo": "7883646616 ",
+        "email": "getlifepune@gmail.com",
+        "roomType": "Double room",
+        "city": "pune",
+        "image": "/HospitalsImage/getlife.jpg"
+
+    },
+    {
+        "id": "H06",
+        "name": "Ojas Hospital",
+        "type": "private",
+        "contactNo": "9543322772",
+        "email": "ojaspune@gmail.com",
+        "roomType": "Double room",
+        "city": "pune",
+        "image": "/HospitalsImage/ojas.jpg"
 
     }
 ]

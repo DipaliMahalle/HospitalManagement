@@ -1,16 +1,22 @@
 import React, { useState } from 'react'
-import HomeLogIn from './HomeLogIn';
-import App from '../App'
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
-
 const useStyles = makeStyles((theme) => ({
     root: {
-        flexGrow: 1,
+        fontSize: "18px",
+        marginRight: "10px"
     },
+
+    '& > *': {
+        margin: theme.spacing(1),
+    },
+
     title: {
-        flexGrow: 1,
-        marginRight: theme.spacing(2),
-        textAlign: 'left',
+        padding: "10px",
+        textAlign: 'center',
+        lineHeight: '0px',
+        color: "#4053bf",
     },
     showList: {
         display: "block"
@@ -22,43 +28,28 @@ const useStyles = makeStyles((theme) => ({
 
 
 function Login() {
-    const [logIn, setLogIn] = useState(false);
-    const [flag, setFlag] = useState(0);
+
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
     const classes = useStyles();
-    function handleLogIn(e) {
-        e.preventDefault();
-        setLogIn(true);
-        setFlag(1);
+
+    function handleUsername(event) {
+        setUsername(event.target.value);
+    }
+    function handlePassword(event) {
+        setPassword(event.target.value)
     }
 
-    return (<div>
-        <div className={logIn ? classes.hideList : classes.showList}>
-            <h1>Login form</h1>
-                UserName : <input type="text" label="username" /><br /><br />
-                PassWord : <input type="passsword" label="password" /><br /><br />
-            <button onClick={(e) => handleLogIn(e)}> LogIn </button>
-            <button> Reset </button><br /><br />
-            <button> Sign up </button>
+    return (<>
+
+        <h1 className={classes.title}>Login To Your Account </h1>
+        <div className={classes.root}>
+            Username : <TextField type="text" value={username} onChange={handleUsername} /><br /><br />
+                Password : <TextField type="password" value={password} onChange={handlePassword} /><br /><br />
         </div>
-        <div className={logIn ? classes.showList : classes.hideList}>
-            <App logIn={logIn} />
-
-        </div>
-
-    </div>)
-
-
-    // return (<div>
-    //     <div>
-    //         <h1>Login form</h1>
-    //             UserName : <input type="text" label="username" /><br /><br />
-    //             PassWord :<input type="passsword" label="password" /><br /><br />
-    //         <button onClick={() => handleLogIn()}> LogIn </button>
-    //         <button>  Reset</button><br /><br />
-    //         <button>Sign up</button>
-    //     </div>
-
-
-    // </div>)
+        <div ><Button variant="contained" color="primary" href={"/HomeLogIn/" + username.trim()} >Login</Button> <span> &#160;</span>
+            <Button variant="contained" color="primary">Reset </Button></div><br />
+        <Button variant="contained" color="primary">Sign Up</Button>
+    </>)
 }
 export default Login

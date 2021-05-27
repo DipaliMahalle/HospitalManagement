@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -52,19 +52,24 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
+        paddingBottom: "0px",
+
+
     },
     title: {
         flexGrow: 1,
         marginRight: theme.spacing(2),
         textAlign: 'left',
+
     },
+
 }));
 
 export default function Home() {
 
 
     const classes = useStyles();
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = React.useState("one");
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -73,44 +78,56 @@ export default function Home() {
     return (
         <div className={classes.root}>
 
-            {/* <AppBar position="static" >
+            <AppBar position="static" >
                 <Toolbar>
-                    <Typography variant="h3" className={classes.title}>
+                    <Typography variant={'h2'} className={classes.title}>
                         Hospitals
                     </Typography>
                 </Toolbar>
-            </AppBar> */}
+            </AppBar>
             <div>
-                <AppBar position="static" style={{ background: '#0097A7' }}>
+                <div>
+                    <AppBar position="static" style={{ background: '#0097A7' }} >
+                        <Tabs value={value} onChange={handleChange} aria-label="wrapped label tabs example">
+                            <Tab value="one" label="Home" {...a11yProps('one')} />
+                            <Tab value="two" label="Hospital List" {...a11yProps('two')} />
+                            <Tab value="three" label="Doctor list" {...a11yProps('three')} />
+                            <Tab value="four" label="About us" {...a11yProps('four')} />
+                            <Tab value="five" label="Contact us" {...a11yProps('five')} />
+                            <Tab value="six" label="Login" {...a11yProps('six')} />
+                        </Tabs>
+                        {(() => {
+                            if (value === "one") {
+                                return <div>
+                                    <AppBar position="static">
+                                        <img src="/Image/iStock-695349930.jpg" alt="hospital" height="250" />
+                                    </AppBar>
+                                </div>
+                            }
+                        })()}
 
-                    <Tabs value={value} onChange={handleChange} aria-label="wrapped label tabs example">
-                        <Tab value="one" label="Home" {...a11yProps('one')} />
-                        <Tab value="two" label="Hospital List" {...a11yProps('two')} />
-                        <Tab value="three" label="Doctor list" {...a11yProps('three')} />
-                        <Tab value="four" label="About us" {...a11yProps('four')} />
-                        <Tab value="five" label="Contact us" {...a11yProps('five')} />
-                        <Tab value="six" label="Login" {...a11yProps('six')} />
-                    </Tabs>
-
-                </AppBar>
-                <TabPanel value={value} index="one">
-                    <HomeMain />
-                </TabPanel>
-                <TabPanel value={value} index="two">
-                    <HospitalList />
-                </TabPanel>
-                <TabPanel value={value} index="three">
-                    <DoctorList />
-                </TabPanel>
-                <TabPanel value={value} index="four">
-                    <AboutUs />
-                </TabPanel>
-                <TabPanel value={value} index="five">
-                    <ContactUs />
-                </TabPanel>
-                <TabPanel value={value} index="six">
-                    <Login />
-                </TabPanel>
+                    </AppBar>
+                </div>
+                <div>
+                    <TabPanel value={value} index="one" component={'span'}>
+                        <HomeMain />
+                    </TabPanel>
+                    <TabPanel value={value} index="two">
+                        <HospitalList />
+                    </TabPanel>
+                    <TabPanel value={value} index="three">
+                        <DoctorList />
+                    </TabPanel>
+                    <TabPanel value={value} index="four">
+                        <AboutUs />
+                    </TabPanel>
+                    <TabPanel value={value} index="five">
+                        <ContactUs />
+                    </TabPanel>
+                    <TabPanel value={value} index="six" variant={'body2'}>
+                        <Login />
+                    </TabPanel>
+                </div>
             </div>
         </div>
     );

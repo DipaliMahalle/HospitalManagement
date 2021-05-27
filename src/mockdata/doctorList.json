@@ -3,18 +3,17 @@
          "name": "Swapnil Dudhat",
          "type": "physician",
          "contactNo": "9883646616",
-         "email": "sde@gmail.com",
+         "email": "swapnil@gmail.com",
          "city": "pune",
          "qualification": "MBBS MS",
-         "image": "/DoctorsImage/d8.jpg",
-         "timing": "8 am-9 pm"
+         "image": "/DoctorsImage/d8.jpg"
      },
      {
          "id": "H01D102",
          "name": "Laxmi Dhaskat",
          "type": "civil surgon",
          "contactNo": "8654332277",
-         "email": "ojas@gmail.com",
+         "email": "laxmi@gmail.com",
          "city": "pune",
          "qualification": "MBBS MD",
          "image": "/DoctorsImage/d6.jpg"
@@ -37,8 +36,7 @@
          "email": "deshmukh@gmail.com",
          "city": "pune",
          "qualification": "MBBS MS",
-         "image": "/DoctorsImage/d4.jpg",
-         "timing": "8 am-9 pm"
+         "image": "/DoctorsImage/d4.jpg"
      },
      {
          "id": "H02D405",
@@ -60,6 +58,4 @@
          "qualification": "MBBS MD",
          "image": "/DoctorsImage/d2.jpg"
      }
-
-
  ]

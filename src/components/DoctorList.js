@@ -1,138 +1,141 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import doctorList from '../mockdata/doctorList.json';
-import doctorTimes from '../mockdata/doctorTimes.json'
-
-import DoctorBookAppoinment from './DoctorBookAppoinment'
+import DoctorBookAppointment from './DoctorBookAppointment'
 import DoctorDetails from './DoctorDetails';
+import DoctorTiming from './DoctorTiming';
+import axios from 'axios';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
+        paddingBottom: "24px",
     },
-    details: {
-        display: 'flex',
-        flexDirection: 'column',
+    title: {
+        padding: "2px",
+        textAlign: 'left',
+        lineHeight: '0px',
+        color: "#4053bf",
     },
-    content: {
-        flex: '1 0 auto',
+    border: {
+        border: "1px solid",
+        borderColor: "#D9E3F0",
+        width: 600,
+
     },
     cover: {
-        width: 200,
-        height: 200
+        '& > *': {
+            margin: theme.spacing(0.6),
+        },
+
     },
     tableinfo: {
-
         textAlign: "left",
-
+        width: 720,
+        height: 300,
+        border: "1px solid ",
+        borderColor: "#D9E3F0",
     },
     showList: {
-        display: "block",
+        display: "block"
     },
     hideList: {
-        display: "none",
-    }
+        display: "none"
+    },
+    back: {
+        textAlign: "left",
+    },
 
-});
+}));
 
 
 function DoctorList() {
     const [flag, setFlag] = useState(0)
     const [show, setShow] = useState(true);
     const classes = useStyles();
+    const [doctorList, setDoctorList] = useState([])
     const [activeDoctor, setActiveDoctor] = useState({ name: "", contactNo: "", email: "" });
     const [doctorTime, setDoctorTime] = useState({ id: "" });
-    const [appoinment, setAppoinment] = useState({ id: "" })
+    const [appointment, setAppointment] = useState({ id: "" })
 
-    function doctorDetails(doctor) {
+    useEffect(() => {
+        axios
+            .get(
+                'http://localhost:8000/doctorList'
+            )
+            .then((res) => {
+
+                setDoctorList(res.data);
+            });
+    }, []);
+
+    function handleDoctorDetails(doctor) {
         setShow(false);
         setActiveDoctor({ ...doctor });
         setFlag(1);
         //console.log(doctor.name + " " + doctor.contactNo + "  " + doctor.email);
 
     }
-    function doctorTiming(doctor) {
+    function handleDoctorTiming(doctor) {
         setShow(false);
-
         setDoctorTime({ ...doctor });
         setFlag(2);
         //alert("Timing")
 
     }
-    function doctorAppoinment(doctor) {
+    function handleDoctorAppointment(doctor) {
 
         setShow(false);
-        setAppoinment({ ...doctor });
+        setAppointment({ ...doctor });
         setFlag(3);
 
         //alert("Appoinment")
     }
-    function handleBack() {
-        setShow(true);
-    }
-    function handleAppoinment(event) {
-        event.preventDefault();
-        console.log("appoinment")
-        // setValue(event.target.value)
-
-    }
-
-
     return (
         <div>
 
             <div className={show ? classes.showList : classes.hideList}>
 
-                <div><h2>Doctors List</h2></div>
+                <div className={classes.title}><h1>All Doctors </h1></div>
 
-                {doctorList.map((doctor, index) => (<div>
-                    <Card className={classes.root}>
-                        <div className={classes.details}>
-                            <CardMedia
-                                component="img"
-                                alt="doctorjpg"
-                                image={doctor.image}
-                                title="doctor"
-                                className={classes.cover}
-                            />
-                        </div>
-                        <CardContent >
-                            <Typography gutterBottom variant="h5" component="h2">
+
+                {doctorList.map((doctor) => (<div className={classes.root}>
+                    <table className={classes.tableinfo} >
+                        <tr className={classes.border}><td><img src={doctor.image} alt="Doctor" width="200" height="170" /></td>
+                            <td>
                                 <table className={classes.tableinfo} >
-                                    <tr><td>Name</td><td> {doctor.name}</td></tr>
-                                    <tr><td> Type </td> <td> {doctor.type}</td></tr>
-                                    <tr><td> Qualification </td> <td> {doctor.qualification}</td></tr>
-                                    <tr><td> Contact No.</td><td> {doctor.contactNo}</td></tr>
-                                    <tr><td>Email Id</td><td> {doctor.email}</td></tr>
-                                    <tr><td> City </td><td>{doctor.city}</td></tr>
+                                    {
+                                        [{ "name": "Doctor Name", prop: "name" },
+                                        { "name": "Doctor Type", prop: "type" },
+                                        { "name": "Qualification", prop: "qualification" },
+                                        { "name": "Contact No.", prop: "contactNo" },
+                                        { "name": "Email Id", prop: "email" },
+                                        { "name": "City", prop: "city" }
+                                        ].map(
+                                            (row) =>
+                                            (<tr>
+                                                <th bgcolor={row.bgcolor} className={classes.border}>{row.name}</th>
+                                                <td className={classes.border}> {doctor[row.prop]}</td>
+                                            </tr>
+                                            ))
+                                    }
+                                    <tr><td className={classes.cover}>
+                                        <Button variant="contained" color="primary" onClick={() => handleDoctorDetails(doctor)}>
+                                            <b> Doctor Details</b>
+                                        </Button>
+                                        <Button variant="contained" color="primary" onClick={() => handleDoctorTiming(doctor)}>
+                                            <b>Doctor Timing</b>
+                                        </Button></td>
+                                        <td className={classes.cover}> <Button variant="contained" color="primary" onClick={() => handleDoctorAppointment(doctor)}>
+                                            <b> Book Appoinment</b>
+                                        </Button>
+                                        </td>
+                                    </tr>
                                 </table>
-                            </Typography>
-                        </CardContent>
-                        <br />
-                    </Card>
-                    <Card>
-                        <CardActions>
-                            <Button color="primary" onClick={() => doctorDetails(doctor)}>
-                                Details of Doctor
-                        </Button>
-                            <Button color="primary" onClick={() => doctorTiming(doctor)}>
-                                Timing of doctor
-                        </Button>
-                            <Button color="primary" onClick={() => doctorAppoinment(doctor)}>
-                                Book Appointment
-                            </Button>
-                        </CardActions>
-                    </Card>
-                    <br />
-                </div >))
-                }
+                            </td>
+                        </tr>
+                    </table>
+                </div>))}
             </div >
 
             <div className={show ? classes.hideList : classes.showList}>
@@ -142,61 +145,20 @@ function DoctorList() {
 
                 {(() => {
                     if (flag === 1) {
-                        // return <div><DoctorDetails /></div>;
 
                         return <div>
-                            <button onClick={() => handleBack()}>Back</button><br /><br />
+                            <DoctorDetails activeDoctor={activeDoctor} />
+                        </div>
 
-                            <h1> Doctor Details </h1>
-                            <Card className={classes.root}>
-                                <div className={classes.details}>
-                                    <CardMedia
-                                        component="img"
-                                        alt="Contemplative Reptile"
-                                        image={activeDoctor.image}
-                                        title="doctor"
-                                        className={classes.cover}
-                                    />
-                                </div>
-                                <table>
-                                    <tr><td>Name</td><td> {activeDoctor.name}</td></tr>
-                                    <tr><td> Type </td> <td> {activeDoctor.type}</td></tr>
-                                    <tr><td> Qualification </td> <td> {activeDoctor.qualification}</td></tr>
-                                    <tr><td> Contact No.</td><td> {activeDoctor.contactNo}</td></tr>
-                                    <tr><td>Email Id</td><td> {activeDoctor.email}</td></tr>
-                                    <tr><td> City </td><td>{activeDoctor.city}</td></tr>
-                                </table>
-                            </Card>
-                        </div>;
+
                     } else if (flag === 2) {
                         return <div>
-                            <button onClick={() => handleBack()}>Back</button><br /><br />
-                            <h1>Doctor Timing</h1>
-                            {doctorTimes.filter(person => doctorTime.id == person.id).map(docttime => <div>
-                                <table>
-                                    <tr><td>Name</td><td> {docttime.name}</td></tr>
-                                    <tr><td> Monday </td> <td> {docttime.monday}</td></tr>
-                                    <tr><td> Tuesday </td> <td> {docttime.tuesday}</td></tr>
-                                    <tr><td> Wensday</td><td> {docttime.wensday}</td></tr>
-                                    <tr><td>Thursday</td><td> {docttime.thursday}</td></tr>
-                                    <tr><td> Friday </td><td>{docttime.friday}</td></tr>
-                                    <tr><td> saturday </td><td>{docttime.saturday}</td></tr>
-                                    <tr><td>sunday </td><td>{docttime.sunday}</td></tr>
-                                </table> <br /></div>)}
+                            <DoctorTiming doctorTime={doctorTime} />
                         </div>;
                     }
                     else if (flag === 3) {
                         return <div>
-                            <button onClick={() => handleBack()}>Back</button><br /><br />
-                            {/* <DoctorBookAppoinment appoinment={appoinment} /> */}
-                            Doctor Name : <input type="text" label="username" value={appoinment.name} /><br /><br />
-                            Appoinment Date: <input type="text" label="date" /><br /><br />
-                            Patient Name : <input type="text" label="patientname" /><br /><br />
-                            Email : <input type="text" label="email" /><br /><br />
-                        Contact No.: <input type="text" label="contactno" /><br /><br />
-                        Address: <input type="text" label="address" /><br /><br />
-                            <button onClick={() => handleAppoinment()}>Book Appoinment</button>
-                            <button>Reset</button><br /><br />
+                            <DoctorBookAppointment appointment={appointment} />
                         </div>;
                     }
                 })()}

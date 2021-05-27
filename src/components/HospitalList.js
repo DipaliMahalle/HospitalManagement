@@ -1,57 +1,73 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useState, useEffect } from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import HospitalDetails from './HospitalDetails';
+import HospitalBranches from './HospitalBranches';
+import HospitalDoctor from './HospitalDoctor';
 
-import hospitalList from '../mockdata/hospitalList.json'
-import getLifeHospitalBranch from '../mockdata/getLifeHospitalBranch.json';
-import ojasHospitalBranch from '../mockdata/ojasHospitalBranch.json';
-import kolteHospitalBranch from '../mockdata/kolteHospitalBranch.json';
-import doctorList from '../mockdata/doctorList.json'
-
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
+        paddingBottom: "24px",
     },
-    details: {
-        display: 'flex',
-        flexDirection: 'column',
+    title: {
+        padding: "2px",
+        textAlign: 'left',
+        lineHeight: '0px',
+        color: "#4053bf",
     },
-    content: {
-        flex: '1 0 auto',
+    border: {
+        border: "1px solid",
+        borderColor: "#D9E3F0",
+        width: 600,
+
     },
     cover: {
-        width: 200,
-        height: 200
+        '& > *': {
+            margin: theme.spacing(1),
+        },
+
     },
     tableinfo: {
-
         textAlign: "left",
-
+        width: 670,
+        height: 250,
+        border: "1px solid ",
+        borderColor: "#D9E3F0",
     },
     showList: {
         display: "block"
     },
     hideList: {
         display: "none"
-    }
+    },
 
-});
+
+
+}));
 
 
 function HospitalList() {
 
     const classes = useStyles();
     const [show, setShow] = useState(true);
-    const [details, setDetails] = useState({ id: "", name: "", type: "", city: "" })
+    const [hospitals, setHospitals] = useState([]);
+    const [details, setDetails] = useState({ name: "", contactNo: "", email: "" });
     const [branches, setBranches] = useState({ id: "" })
-
+    const [doctors, setDoctors] = useState({ id: "" })
     const [flag, setFlag] = useState(0);
+
+    useEffect(() => {
+        axios
+            .get(
+                'http://localhost:8000/hospitalList'
+            )
+            .then((res) => {
+
+                setHospitals(res.data);
+            });
+    }, []);
 
     function handleHospitalDetails(hospital) {
         setShow(false);
@@ -65,142 +81,74 @@ function HospitalList() {
     }
     function handleHospitalDoctors(hospital) {
         setShow(false);
-        setDetails({ ...hospital });
+        setDoctors({ ...hospital });
         setFlag(3);
-    }
-    function handleBack() {
-        setShow(true);
     }
 
     return (
 
         <div>
-            <div className={show ? classes.showList : classes.hideList} >
-                <div><h2>Hospitals List</h2></div>
+            <div className={show ? classes.showList : classes.hideList}>
+                <div className={classes.title}><h1>All Hospitals</h1></div>
+                {hospitals.map((hospital) => (<div>
+                    <div className={classes.root}>
+                        <table className={classes.tableinfo} >
+                            <tr className={classes.border}><td><img src={hospital.image} alt="hospital" width="200" height="200" /></td>
+                                <td>
+                                    <table className={classes.tableinfo} >
+                                        {
+                                            [{ "name": "Hospital Name", prop: "name" },
+                                            { "name": "Hospital Type", prop: "type" },
+                                            { "name": "Contact No.", prop: "contactNo" },
+                                            { "name": "Email Id", prop: "email" },
+                                            { "name": "City", prop: "city" }
+                                            ].map(
+                                                (row) =>
+                                                (<tr>
+                                                    <th className={classes.border}>{row.name}</th>
+                                                    <td className={classes.border}> {hospital[row.prop]}</td>
+                                                </tr>
 
-                {hospitalList.map(hospital => (<div>
-                    <Card className={classes.root}>
-                        <div className={classes.details}>
-                            <CardMedia
-                                component="img"
-                                alt="Contemplative Reptile"
-                                image={hospital.image}
-                                title="doctor"
-                                className={classes.cover}
+                                                ))
 
-                            />
-                        </div>
-                        <CardContent >
-                            <Typography gutterBottom variant="h5" component="h2">
-                                <table className={classes.tableinfo} >
-                                    <tr><td>Name</td><td>{hospital.name}</td></tr>
-                                    <tr><td> Type </td> <td>{hospital.type}</td></tr>
-                                    <tr><td> Contact No.</td><td>{hospital.contactNo}</td></tr>
-                                    <tr><td>Email Id</td><td>{hospital.email}</td></tr>
-                                    <tr><td> City </td><td>{hospital.city}</td></tr>
-
-                                </table>
-                            </Typography>
-                        </CardContent> <br />
-                    </Card>
-                    <Card>
-                        <CardActions>
-                            <Button color="primary" onClick={() => handleHospitalDetails(hospital)}>
-                                View Details
-                </Button>
-                            <Button color="primary" onClick={() => handleHospitalBranches(hospital)}>
-                                Branches
-                </Button>
-                            <Button color="primary" onClick={() => handleHospitalDoctors(hospital)}>
-                                Doctors
-                </Button>
-                        </CardActions>
-                    </Card>
-                    <br />
-
-                </div >))
-                }
+                                        }
+                                        <tr><td className={classes.cover}>
+                                            <Button variant="contained" color="primary" onClick={() => handleHospitalDetails(hospital)}>
+                                                <b> View Details</b>
+                                            </Button>
+                                            <Button variant="contained" color="primary" onClick={() => handleHospitalBranches(hospital)}>
+                                                <b>Branches</b>
+                                            </Button></td>
+                                            <td className={classes.cover}> <Button variant="contained" color="primary" onClick={() => handleHospitalDoctors(hospital)} >
+                                                <b> Doctors</b>
+                                            </Button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>))}
             </div>
-            <div className={show ? classes.hideList : classes.showList} >
-
+            <div className={show ? classes.hideList : classes.showList}>
                 {(() => {
                     if (flag === 1) {
-                        // return <div><DoctorDetails /></div>;
-
                         return <div>
-                            <button onClick={() => handleBack()}>Back</button><br /><br />
-
-                            <h1> Hospital Details </h1>
-                            <Card className={classes.root}>
-                                <div className={classes.details}>
-                                    <CardMedia
-                                        component="img"
-                                        alt="Contemplative Reptile"
-                                        image={details.image}
-                                        title="doctor"
-                                        className={classes.cover}
-                                    />
-                                </div>
-                                <table>
-                                    <tr><td>Name</td><td> {details.name}</td></tr>
-                                    <tr><td> Type </td> <td> {details.type}</td></tr>
-                                    <tr><td> Contact No.</td><td> {details.contactNo}</td></tr>
-                                    <tr><td>Email Id</td><td> {details.email}</td></tr>
-                                    <tr><td> City </td><td>{details.city}</td></tr>
-                                </table>
-                            </Card>
+                            <HospitalDetails details={details} />
                         </div>;
                     } else if (flag === 2) {
                         return <div>
-                            <button onClick={() => handleBack()}>Back</button><br /><br />
-                            <h1>Branches of {branches.name} Hospital</h1>
-
-                            {(() => {
-
-                                switch (branches.id) {
-
-                                    case 'H01':
-                                        return (<div>{getLifeHospitalBranch.map(getlife => (<div>{getlife.branchName} {getlife.branchFacility}</div>))}</div>)
-                                    case 'H02':
-                                        return (<div>{ojasHospitalBranch.map(ojas => (<div>{ojas.branchName} {ojas.branchFacility}</div>))}</div>)
-                                    case 'H03':
-                                        return (<div>{kolteHospitalBranch.map(kolte => (<div>{kolte.branchName} {kolte.branchFacility}</div>))}</div>)
-
-                                    default: return (<div><h1>There is no branch</h1></div>)
-                                }
-
-                            })()}
-
-
-                            {/* {doctorTimes.filter(person => doctorTime.id == person.id).map(docttime => <div>
-                                <table>
-                                    <tr><td>Name</td><td> {docttime.name}</td></tr>
-                                    <tr><td> Monday </td> <td> {docttime.monday}</td></tr>
-                                    <tr><td> Tuesday </td> <td> {docttime.tuesday}</td></tr>
-                                    <tr><td> Wensday</td><td> {docttime.wensday}</td></tr>
-                                    <tr><td>Thursday</td><td> {docttime.thursday}</td></tr>
-                                    <tr><td> Friday </td><td>{docttime.friday}</td></tr>
-                                    <tr><td> saturday </td><td>{docttime.saturday}</td></tr>
-                                    <tr><td>sunday </td><td>{docttime.sunday}</td></tr>
-                                </table> <br /></div>)} */}
+                            <HospitalBranches branches={branches} />
                         </div>;
                     }
+
                     else if (flag === 3) {
                         return <div>
-                            <button onClick={() => handleBack()}>Back</button><br /><br />
-                            <h1>Doctor of {details.name} Hospital </h1>
-
-                            {doctorList.filter(doct => (doct.id.includes(details.id))).map(d => <div>{d.name}</div>)}
-                            {/* Doctor Name : <input type="text" label="username" value={appoinment.name} /><br /><br />
-                            Appoinment Date: <input type="text" label="date" /><br /><br />
-                            Patient Name : <input type="text" label="patientname" /><br /><br />
-                            Email : <input type="text" label="email" /><br /><br />
-                        Contact No.: <input type="text" label="contactno" /><br /><br />
-                        Address: <input type="text" label="address" /><br /><br />
-                            <button onClick={() => handleAppoinment()}>Book Appoinment</button>
-                            <button>Reset</button><br /><br /> */}
+                            <HospitalDoctor details={doctors} />
                         </div>;
                     }
+
                 })()}
 
             </div>

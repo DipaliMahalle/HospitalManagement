@@ -7,8 +7,8 @@
         "thursday": "8am - 9pm",
         "friday": "8am - 9pm",
         "saturday": "8am - 9pm",
-        "sunday": "8am - 9pm"
-
+        "sunday": "8am - 9pm",
+        "fees": "500 Rs"
     },
 
     {
@@ -21,7 +21,8 @@
         "thursday": "7am - 6pm",
         "friday": "7am - 6pm",
         "saturday": "7am - 6pm",
-        "sunday": "7am - 6pm"
+        "sunday": "7am - 6pm",
+        "fees": "400 Rs"
     },
     {
         "id": "H02D401",
@@ -33,7 +34,8 @@
         "thursday": "8am - 10pm",
         "friday": "8am - 10pm",
         "saturday": "8am - 10pm",
-        "sunday": "8am - 10pm"
+        "sunday": "8am - 10pm",
+        "fees": "500 Rs"
     },
     {
         "id": "H02D403",
@@ -45,7 +47,8 @@
         "thursday": "8am - 10pm",
         "friday": "8am - 10pm",
         "saturday": "8am - 10pm",
-        "sunday": "8am - 10pm"
+        "sunday": "8am - 10pm",
+        "fees": "450 Rs"
     },
     {
         "id": "H02D405",
@@ -56,7 +59,8 @@
         "thursday": "8am - 10pm",
         "friday": "8am - 10pm",
         "saturday": "8am - 10pm",
-        "sunday": "8am - 10pm"
+        "sunday": "8am - 10pm",
+        "fees": "550 Rs"
     },
     {
         "id": "H03D701",
@@ -68,7 +72,8 @@
         "thursday": "8am - 10pm",
         "friday": "8am - 10pm",
         "saturday": "8am - 10pm",
-        "sunday": "8am - 10pm"
+        "sunday": "8am - 10pm",
+        "fees": "500 Rs"
     }
 
 
